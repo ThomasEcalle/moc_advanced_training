@@ -22,7 +22,10 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: const Text('Home'),
       ),
-      body: _tabs[_currentIndex],
+      body: IndexedStack(
+        index: _currentIndex,
+        children: _tabs,
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: _onTap,
